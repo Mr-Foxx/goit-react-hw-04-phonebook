@@ -3,9 +3,7 @@ import { Formik } from 'formik';
 import { FormContact, Label, Input, Button } from './Form.styled';
 import PropTypes from 'prop-types';
 
-export const Form = ({ props }) => {
-  const { handleSubmit } = props;
-
+export const Form = ({ handleSubmit }) => {
   return (
     <Formik initialValues={{ name: '', number: '' }} onSubmit={handleSubmit}>
       {({ values, handleChange, handleSubmit }) => (
@@ -17,7 +15,6 @@ export const Form = ({ props }) => {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            //   id={idInputName}
             value={values.name}
             onChange={handleChange}
           />
@@ -30,7 +27,6 @@ export const Form = ({ props }) => {
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
-            //   id={idInputNamber}
             value={values.number}
             onChange={handleChange}
           />
